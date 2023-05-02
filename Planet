@@ -1,1 +1,43 @@
-
+public enum Planet {
+    MERCURY(1, 0, 57.9, 2439.7, null, VENUS),
+    VENUS(2, 108.2, 108.2+67.2, 6051.8, MERCURY, EARTH),
+    EARTH(3, 149.6, 149.6-108.2, 6371.0, VENUS, MARS),
+    MARS(4, 227.9, 227.9-149.6, 3389.5, EARTH, JUPITER),
+    JUPITER(5, 778.5, 778.5-227.9, 69911, MARS, SATURN),
+    SATURN(6, 1429.0, 1429.0-778.5, 58232, JUPITER, URANUS),
+    URANUS(7, 2871.0, 2871.0-1429.0, 25362, SATURN, NEPTUNE),
+    NEPTUNE(8, 4495.1, 4495.1-2871.0, 24622, URANUS, null);
+    public final int orderFromSun;
+    private final double distanceFromPrevious;
+    private final double distanceFromSun;
+    private final double radius;
+    private final Planet previousPlanet;
+    private final Planet nextPlanet;
+    Planet(int orderFromSun, double distanceFromPrevious, double distanceFromSun, double radius,
+           Planet previousPlanet, Planet nextPlanet) {
+        this.orderFromSun = orderFromSun;
+        this.distanceFromPrevious = distanceFromPrevious;
+        this.distanceFromSun = distanceFromSun;
+        this.radius = radius;
+        this.previousPlanet = previousPlanet;
+        this.nextPlanet = nextPlanet;
+    }
+    public int getOrderFromSun() {
+        return orderFromSun;
+    }
+    public double getDistanceFromPrevious() {
+        return distanceFromPrevious;
+    }
+    public double getDistanceFromSun() {
+        return distanceFromSun;
+    }
+    public double getRadius() {
+        return radius;
+    }
+    public Planet getPreviousPlanet() {
+        return previousPlanet;
+    }
+    public Planet getNextPlanet() {
+        return nextPlanet;
+    }
+}
