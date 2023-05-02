@@ -17,7 +17,7 @@ public enum Planet {
            Planet previousPlanet, Planet nextPlanet) {
         this.orderFromSun = orderFromSun;
         this.distanceFromPrevious = distanceFromPrevious;
-        this.distanceFromSun = distanceFromSun;
+        this.distanceFromSun = distanceFromPrevious + distanceFromSun;
         this.radius = radius;
         this.previousPlanet = previousPlanet;
         this.nextPlanet = nextPlanet;
