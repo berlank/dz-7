@@ -16,10 +16,10 @@ public enum Planet {
     Planet(int orderFromSun, double distanceFromPrevious, double distanceFromSun, double radius,
            Planet previousPlanet, Planet nextPlanet) {
         this.orderFromSun = orderFromSun;
-        this.distanceFromPrevious = distanceFromPrevious;
-        this.distanceFromSun = distanceFromSun;
+        this.distanceFromPrevPlanet = distanceFromPrevPlanet;
+        this.distanceFromSun = distanceFromPrevPlanet + distanceFromSun;
         this.radius = radius;
-        this.previousPlanet = previousPlanet;
+        this.prevPlanet = prevPlanet;
         this.nextPlanet = nextPlanet;
     }
     public int getOrderFromSun() {
